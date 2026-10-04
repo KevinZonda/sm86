@@ -1,9 +1,12 @@
 MODEL := /mnt/modelzoo/MIRALABS/Qwen3.8-27B-W4A16-AutoRound
 NAME  := qwen27b
-EFFORT ?= medium
+URL   ?= http://localhost:8000/v1
 
 # 使用前需先激活 venv：
 #   source ../.venv/bin/activate
+# chat 是连已启动的 serve（vllm chat 在 0.30 里是 API client）；
+# 思考强度 reasoning_effort 只能走 API 的 chat_template_kwargs，
+# 这个 CLI 不支持，要调强度请用 curl / openai SDK（见 THINK.md）。
 
 .PHONY: serve chat check
 
@@ -24,5 +27,4 @@ serve: check
 	  --speculative-config '{"method":"mtp","num_speculative_tokens":3}'
 
 chat: check
-	vllm chat $(MODEL) \
-	  --chat-template-kwargs '{"reasoning_effort":"$(EFFORT)"}'
+	@vllm chat --url $(URL) --model-name $(NAME)

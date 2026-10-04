@@ -36,12 +36,14 @@ client.chat.completions.create(
 )
 ```
 
-交互式：
+交互式（连本机已启动的 serve）：
 
 ```bash
-.venv/bin/vllm chat /mnt/modelzoo/MIRALABS/Qwen3.8-27B-W4A16-AutoRound \
-  --chat-template-kwargs '{"reasoning_effort": "medium"}'
+make chat    # 等价于 vllm chat --url http://localhost:8000/v1 --model-name qwen27b
 ```
+
+注意：`vllm chat` 在 vLLM 0.30 里是 API client，**不支持**传 `chat_template_kwargs`，
+要调思考强度请走上面的 curl / Python 方式。
 
 ## 场景建议
 
