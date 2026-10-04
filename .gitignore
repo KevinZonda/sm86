@@ -1,2 +1,9 @@
 .vscode
 .DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv
+.venv
+venvs
