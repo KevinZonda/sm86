@@ -1,0 +1,21 @@
+[21:08:39] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ3_XXS --context 32768 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ3_XXS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:08:44] 启动 iq3_xxs ...
+[21:09:14] 就绪 (30s), max_context=32768
+[21:09:29] {'model': 'iq3_xxs', 'vision': 'on', 'kv': 'vram', 'context': 32768, 'prompt_tokens': 29511, 'prefill_s': 9.94, 'prefill_tps': 2968.9, 'decode_tps_count': 120.6, 'short_count_tps': 147.4, 'short_free_tps': 86.8, 'vram0_mib': 19587, 'vram1_mib': 19683, 'ram_used_gib': 44.4, 'ts': '2026-10-05 21:09'}
+[21:09:33] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ3_XXS --context 65536 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ3_XXS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:09:38] 启动 iq3_xxs ...
+[21:10:03] 就绪 (25s), max_context=65536
+[21:10:26] {'model': 'iq3_xxs', 'vision': 'on', 'kv': 'vram', 'context': 65536, 'prompt_tokens': 58991, 'prefill_s': 17.32, 'prefill_tps': 3405.9, 'decode_tps_count': 117.1, 'short_count_tps': 147.4, 'short_free_tps': 86.8, 'vram0_mib': 19587, 'vram1_mib': 19681, 'ram_used_gib': 44.4, 'ts': '2026-10-05 21:10'}
+[21:10:30] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ3_XXS --context 131072 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ3_XXS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:10:35] 启动 iq3_xxs ...
+[21:11:00] 就绪 (25s), max_context=131072
+[21:11:37] {'model': 'iq3_xxs', 'vision': 'on', 'kv': 'vram', 'context': 131072, 'prompt_tokens': 117951, 'prefill_s': 31.19, 'prefill_tps': 3781.7, 'decode_tps_count': 111.2, 'short_count_tps': 145.3, 'short_free_tps': 82.5, 'vram0_mib': 19585, 'vram1_mib': 19683, 'ram_used_gib': 44.4, 'ts': '2026-10-05 21:11'}
+[21:11:41] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ3_XXS --context 196608 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ3_XXS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:11:45] 启动 iq3_xxs ...
+[21:12:10] 就绪 (25s), max_context=196608
+[21:13:03] {'model': 'iq3_xxs', 'vision': 'on', 'kv': 'vram', 'context': 196608, 'prompt_tokens': 176978, 'prefill_s': 46.53, 'prefill_tps': 3803.5, 'decode_tps_count': 105.3, 'short_count_tps': 140.1, 'short_free_tps': 81.2, 'vram0_mib': 19589, 'vram1_mib': 19685, 'ram_used_gib': 44.4, 'ts': '2026-10-05 21:13'}
+[21:13:07] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ3_XXS --context 262144 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ3_XXS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:13:12] 启动 iq3_xxs ...
+[21:13:37] 就绪 (25s), max_context=262144
+[21:14:46] {'model': 'iq3_xxs', 'vision': 'on', 'kv': 'vram', 'context': 262144, 'prompt_tokens': 235938, 'prefill_s': 63.21, 'prefill_tps': 3732.6, 'decode_tps_count': 98.5, 'short_count_tps': 136.3, 'short_free_tps': 76.9, 'vram0_mib': 19589, 'vram1_mib': 19683, 'ram_used_gib': 44.4, 'ts': '2026-10-05 21:14'}
+[21:14:50] 已追加 /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/bench/BENCHMARK.md
