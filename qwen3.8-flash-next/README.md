@@ -98,6 +98,12 @@ curl http://127.0.0.1:8080/health                 # 验证（首次加载需几�
 ./setup.sh --check               # 环境自检
 ```
 
+也可以用上层 Makefile：`make serve`（QUANT_TYPE 默认 iq3_xxs）、`make setup`（锁 256K 上下文 + vision）、`make health`。
+
+### Vision（图像理解）
+
+IQ2_XS 和 IQ3_XXS 两个配置均已开启（2026-10-05）：编码器 `Strata/engine/strata-vision`（GPU，预留 700 MiB 显存，每图最多 1024 image token），mmproj 在 `Strata-data/models/mmproj-Qwen3.8-Flash-Next-BF16.gguf`（两配置共用）。`/health` 返回 `"images": true` 即生效。API 用法：messages content 里加 `{"type": "image_url", "image_url": {"url": "data:image/png;base64,..."}}`（也支持 http(s) 图片 URL）；网页 Chat 页可直接贴图，`chat.py` 里用 `/image <路径>`。注意：IQ3_XXS + vision 时 KV streaming 自动关（RAM 不够），KV 全留显存。
+
 ## 关于 .venv
 
 **不需要手工做**：`setup.sh` 第一步就会在 `Strata/.venv/` 自动创建私有 Python 环境（系统 Python 3.14 + requirements.txt 固定版本），与仓库外层的 `.venv` 完全隔离。这是 Strata 的设计使然——更新 Strata 时 `.venv` 和引擎都会保留复用。
