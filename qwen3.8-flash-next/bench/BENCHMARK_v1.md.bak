@@ -1,0 +1,32 @@
+# Strata 基准测试报告
+
+- 日期：2026-10-05 12:55
+- 机型：NVIDIA GeForce RTX 3080, 20480 MiB / NVIDIA GeForce RTX 3080, 20480 MiB；CPU AMD Ryzen 7 5700X 8-Core Processor；RAM 60GB
+- 引擎：Strata 0.1.39（本地编译，archs [86]）；双卡层切分 + KV streaming(int8) + MTP 投机解码
+- 模型：Qwen3.8-Flash-Next（ISTA-DASLab GSQ-RCO），IQ2_XS 与 IQ3_XXS，分片2硬链接共享
+- 方法：每档上下文重新配置并重启服务；prefill 探针 = 90% 上下文长度的英文文本(max_tokens=1 计时)；长上下文 decode = 同一长 prompt 发 max_tokens=129 与 max_tokens=1 的差值；短对话 = 30 词以内 prompt 生成 128 token
+
+## IQ2_XS
+| 上下文 | prefill tok/s (@90% ctx) | 长ctx decode tok/s | 短对话 tok/s | 显存 卡0/卡1 (GiB) | 服务内存 (GiB) |
+|---:|---:|---:|---:|---:|---:|
+| 32K | 2989.0 | None | 69.8 | 19.1 / 19.2 | 36.7 |
+| 64K | 3447.2 | None | 68.2 | 19.1 / 19.2 | 37.5 |
+| 128K | 3705.3 | None | 65.2 | 19.1 / 19.2 | 38.5 |
+| 192K | 3658.6 | None | 68.2 | 19.1 / 19.2 | 39.3 |
+| 256K | 3558.0 | None | 62.5 | 19.1 / 19.2 | 40.2 |
+
+## IQ3_XXS
+| 上下文 | prefill tok/s (@90% ctx) | 长ctx decode tok/s | 短对话 tok/s | 显存 卡0/卡1 (GiB) | 服务内存 (GiB) |
+|---:|---:|---:|---:|---:|---:|
+| 32K | 2979.9 | None | 53.4 | 19.1 / 19.2 | 43.7 |
+| 64K | 3387.8 | None | 52.5 | 19.1 / 19.2 | 43.5 |
+| 128K | 3717.0 | None | 46.3 | 19.1 / 19.2 | 43.9 |
+| 192K | 3720.2 | None | 47.0 | 19.1 / 19.2 | 43.8 |
+| 256K | 3543.5 | None | 44.9 | 19.1 / 19.2 | 43.8 |
+
+## 说明
+- decode 速度含 MTP 投机解码（spec 4）；长上下文 decode 因 KV 部分驻留内存，略低于短对话。
+- 内存占用 = 服务就绪前后 MemAvailable 差值（含锁定专家）；显存为就绪后 nvidia-smi 读数。
+- IQ3_XXS 专家更大，同等显存缓存命中更少，decode 低于 IQ2_XS 属预期。
+
+原始数据：results.csv；日志：bench.log
