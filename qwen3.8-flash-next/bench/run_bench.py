@@ -18,8 +18,8 @@ ROOT = Path(__file__).resolve().parent            # qwen3.8-flash-next/bench/
 STRATA = ROOT.parent / "Strata"
 DATA = Path("/mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF")
 MS_API = "https://www.modelscope.cn/api/v1/models/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/repo/files?Recursive=true"
-LOG = ROOT / "bench.log"
-CSV = ROOT / "results.csv"
+LOG = ROOT / "results" / "conc1" / "bench.log"
+CSV = ROOT / "results" / "conc1" / "results.csv"
 MD = ROOT / "BENCHMARK.md"
 API = "http://127.0.0.1:8080"
 
@@ -40,7 +40,7 @@ SETUP_EXTRA = ["--prebuilt", "https://gh-proxy.com/https://github.com/Niko1221/S
 def log(msg):
     line = f"[{time.strftime('%H:%M:%S')}] {msg}"
     print(line, flush=True)
-    LOG.parent.mkdir(exist_ok=True)
+    LOG.parent.mkdir(parents=True, exist_ok=True)
     with open(LOG, "a") as f:
         f.write(line + "\n")
 
@@ -280,10 +280,10 @@ def write_report(rows):
         L.append("")
     L += ["## 备注",
           "- **decode 为乐观值**：计数任务输出高度可预测，MTP 投机解码接受率接近上限；自由文本实测约低 30-40%"
-          "（参考：非流式自由文本短对话 iq2_xs ≈62-70 tok/s，iq3_xxs ≈45-53 tok/s，见 results_v1_invalid_decode.csv.bak 的 short_chat_tps）。",
+          "（参考：非流式自由文本短对话 iq2_xs ≈62-70 tok/s，iq3_xxs ≈45-53 tok/s，见 results/conc1/results_v1_invalid_decode.csv.bak 的 short_chat_tps）。",
           "- decode 含 MTP 投机解码；长上下文 decode 因注意力范围增大低于短对话属正常。",
           "- IQ3_XXS 专家更大（43 vs 36GB），显存命中率低于 IQ2_XS，decode 低约 20-30% 属预期。",
-          "", "原始数据：results.csv；全程日志：bench.log"]
+          "", "原始数据：results/conc1/results.csv；全程日志：results/conc1/bench.log"]
     MD.write_text("\n".join(L))
     log(f"报告已写入 {MD}")
 

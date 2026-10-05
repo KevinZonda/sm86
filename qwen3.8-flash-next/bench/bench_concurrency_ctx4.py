@@ -17,7 +17,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import run_bench as rb
 import bench_concurrency_ctx as bc
 
-CSV = bc.ROOT / "concurrency_ctx4_results.csv"
+CSV = bc.ROOT / "results" / "conc4" / "results.csv"
+bc.rb.LOG = bc.ROOT / "results" / "conc4" / "bench.log"     # 覆盖被导入的 conc2 设置
 CONC = 4
 API = rb.API
 
@@ -124,7 +125,7 @@ def append_report(rows):
         for r in rows:
             if r.get("errors"):
                 L.append(f"- {r['model'].upper()} @{r['context']//1024}K: {r['errors']}")
-    L += ["", "原始数据：concurrency_ctx4_results.csv", ""]
+    L += ["", "原始数据：results/conc4/results.csv", ""]
     md = bc.ROOT / "BENCHMARK.md"
     md.write_text(md.read_text().rstrip("\n") + "\n" + "\n".join(L))
     rb.log(f"已追加 {md}")

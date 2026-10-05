@@ -30,11 +30,11 @@
 | 256K | 3537.3 | 105.9 | 138.2 | 19.1 / 19.2 | 43.8 |
 
 ## 备注
-- **decode 为乐观值**：计数任务输出高度可预测，MTP 投机解码接受率接近上限；自由文本实测约低 30-40%（参考：非流式自由文本短对话 iq2_xs ≈62-70 tok/s，iq3_xxs ≈45-53 tok/s，见 results_v1_invalid_decode.csv.bak 的 short_chat_tps）。
+- **decode 为乐观值**：计数任务输出高度可预测，MTP 投机解码接受率接近上限；自由文本实测约低 30-40%（参考：非流式自由文本短对话 iq2_xs ≈62-70 tok/s，iq3_xxs ≈45-53 tok/s，见 results/conc1/results_v1_invalid_decode.csv.bak 的 short_chat_tps）。
 - decode 含 MTP 投机解码；长上下文 decode 因注意力范围增大低于短对话属正常。
 - IQ3_XXS 专家更大（43 vs 36GB），显存命中率低于 IQ2_XS，decode 低约 20-30% 属预期。
 
-原始数据：results.csv；全程日志：bench.log
+原始数据：results/conc1/results.csv；全程日志：results/conc1/bench.log
 
 ## 2 并发测试（2026-10-05 增补）
 
@@ -58,7 +58,7 @@
 - 注意：长上下文并发的 "每路 prefill tok/s" 受 Strata prefix 缓存影响（nonce 在 prompt 末尾，
   与前一个单发请求共享几乎全部前缀），该列只作参考；短对话并发里第二路的低 prefill 数字是排队延迟，非真实 prefill 速度。
 
-原始数据：concurrency_results.csv
+原始数据：results/conc2/results.csv
 
 ## 分档上下文 2 并发（2026-10-05 增补，重点：内存/显存）
 
@@ -76,7 +76,7 @@
 | IQ3_XXS | 192K | 177005 | 48.17 / 97.77 | 109.9 / 134.5 | 219.9 | 19.2 / 19.3 | 45.0 |
 | IQ3_XXS | 200K | 184375 | 50.45 / 102.47 | 109.9 / 133.6 | 219.9 | 19.2 / 19.3 | 44.9 |
 
-原始数据：concurrency_ctx_results.csv
+原始数据：results/conc2/results_ctx.csv
 
 ## 分档上下文 4 并发（2026-10-05 增补，重点：内存/显存）
 
@@ -94,4 +94,4 @@
 | IQ3_XXS | 192K | 4/4 | 99.64 / 49.38 / 201.04 / 150.23 | 130.1 / 110.6 / 135.4 / 135.4 | 442.2 | 19.2 / 19.3 | 45.0 |
 | IQ3_XXS | 200K | 4/4 | 157.59 / 104.43 / 210.94 / 51.69 | 134.5 / 131.8 / 134.5 / 108.7 | 435.0 | 19.2 / 19.3 | 45.0 |
 
-原始数据：concurrency_ctx4_results.csv
+原始数据：results/conc4/results.csv

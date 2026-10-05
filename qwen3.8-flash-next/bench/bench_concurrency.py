@@ -14,7 +14,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import run_bench as rb
 
 ROOT = rb.ROOT
-CSV = ROOT / "concurrency_results.csv"
+rb.LOG = ROOT / "results" / "conc2" / "bench.log"     # 与 bench_concurrency_ctx 共用
+CSV = ROOT / "results" / "conc2" / "results.csv"
 LONG_REPS = 430                                   # ≈ 28.8K tokens
 LONG_PROMPT = rb.BASE_PARA * LONG_REPS + rb.COUNT_TASK
 MODELS = ["iq2_xs", "iq3_xxs"]
@@ -97,7 +98,7 @@ def append_report(rows):
         L.append(f"| {r['model'].upper()} | {r['scenario']} | {r['concurrency']} | {r['wall_s']} "
                  f"| {r['dec_tps_min']}–{r['dec_tps_max']} | {r['agg_dec_tps']} | {r['prefill_tps_min']} "
                  f"| {r['vram0_mib']/1024:.1f} / {r['vram1_mib']/1024:.1f} |")
-    L += ["", "原始数据：concurrency_results.csv", ""]
+    L += ["", "原始数据：results/conc2/results.csv", ""]
     md = ROOT / "BENCHMARK.md"
     md.write_text(md.read_text().rstrip("\n") + "\n" + "\n".join(L))
     rb.log(f"已追加 {md}")
