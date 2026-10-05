@@ -1,0 +1,33 @@
+[21:25:22] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ2_XS --context 65536 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ2_XS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:25:27] 启动 iq2_xs ...
+[21:25:52] 就绪 (25s), max_context=65536
+[21:27:07] iq2_xs @64K x4: wall 73.99s, ok 4/4, dec [153.1, 154.3, 153.1, 149.6], agg 598.5, vram_peak [19649, 19705], ram_peak_used 38.9GiB, alive_after=True
+[21:27:11] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ2_XS --context 131072 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ2_XS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:27:16] 启动 iq2_xs ...
+[21:27:41] 就绪 (25s), max_context=131072
+[21:29:55] iq2_xs @128K x4: wall 134.6s, ok 4/4, dec [146.3, 146.3, 146.3, 141.1], agg 564.5, vram_peak [19655, 19709], ram_peak_used 40.2GiB, alive_after=True
+[21:29:59] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ2_XS --context 196608 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ2_XS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:30:04] 启动 iq2_xs ...
+[21:30:29] 就绪 (25s), max_context=196608
+[21:33:50] iq2_xs @192K x4: wall 201.29s, ok 4/4, dec [141.1, 133.6, 140.1, 139.2], agg 534.2, vram_peak [19651, 19703], ram_peak_used 41.0GiB, alive_after=True
+[21:33:54] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ2_XS --context 204800 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ2_XS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:33:59] 启动 iq2_xs ...
+[21:34:24] 就绪 (25s), max_context=204800
+[21:37:57] iq2_xs @200K x4: wall 212.52s, ok 4/4, dec [138.2, 140.1, 139.2, 136.3], agg 545.2, vram_peak [19655, 19703], ram_peak_used 41.2GiB, alive_after=True
+[21:38:01] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ3_XXS --context 65536 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ3_XXS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:38:06] 启动 iq3_xxs ...
+[21:38:36] 就绪 (30s), max_context=65536
+[21:39:53] iq3_xxs @64K x4: wall 76.59s, ok 4/4, dec [113.7, 145.3, 143.2, 143.2], agg 454.9, vram_peak [19661, 19761], ram_peak_used 45.1GiB, alive_after=True
+[21:39:57] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ3_XXS --context 131072 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ3_XXS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:40:02] 启动 iq3_xxs ...
+[21:40:27] 就绪 (25s), max_context=131072
+[21:42:41] iq3_xxs @128K x4: wall 134.3s, ok 4/4, dec [110.6, 138.2, 140.1, 140.1], agg 442.2, vram_peak [19659, 19765], ram_peak_used 45.5GiB, alive_after=True
+[21:42:45] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ3_XXS --context 196608 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ3_XXS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:42:50] 启动 iq3_xxs ...
+[21:43:20] 就绪 (30s), max_context=196608
+[21:46:40] iq3_xxs @192K x4: wall 199.21s, ok 4/4, dec [104.2, 133.6, 134.5, 131.8], agg 416.8, vram_peak [19663, 19767], ram_peak_used 45.6GiB, alive_after=True
+[21:46:44] $ /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/Strata/setup.sh --yes --setup --family qwen --model IQ3_XXS --context 204800 --vision yes --no-start --gguf-dir /mnt/modelzoo/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/IQ3_XXS --prebuilt https://gh-proxy.com/https://github.com/Niko1221/Strata/releases/download/v0.1.39/
+[21:46:48] 启动 iq3_xxs ...
+[21:47:13] 就绪 (25s), max_context=204800
+[21:50:42] iq3_xxs @200K x4: wall 208.67s, ok 4/4, dec [102.1, 133.6, 128.4, 133.6], agg 408.2, vram_peak [19663, 19765], ram_peak_used 45.7GiB, alive_after=True
+[21:50:46] 已追加 /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/bench/BENCHMARK.md
