@@ -132,3 +132,31 @@ All set.
 [13:11:15] 报告已写入 /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/bench/BENCHMARK.md
 [13:11:15] 全部完成
 [13:13:20] 报告已写入 /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/bench/BENCHMARK.md
+[19:40:23] 启动 iq2_xs ...
+[19:40:48] 就绪 (25s), max_context=262144
+[19:41:27] 启动 iq2_xs ...
+[19:41:52] 就绪 (25s), max_context=262144
+[19:41:54] iq2_xs short x1: wall 1.66s, dec_tps 159.2-159.2, agg 159.2
+[19:41:54]   ttft 0.4s prefill 145.0 dec 159.2 tok/s (200 tok / 1.25s)
+[19:41:57] iq2_xs short x2: wall 3.0s, dec_tps 170.1-173.0, agg 340.2
+[19:41:57]   ttft 0.34s prefill 170.6 dec 170.1 tok/s (200 tok / 1.17s)
+[19:41:57]   ttft 1.85s prefill 31.4 dec 173.0 tok/s (200 tok / 1.15s)
+[19:42:08] iq2_xs long28k x1: wall 11.01s, dec_tps 156.7-156.7, agg 156.7
+[19:42:08]   ttft 9.74s prefill 2963.9 dec 156.7 tok/s (200 tok / 1.27s)
+[19:42:22] iq2_xs long28k x2: wall 13.9s, dec_tps 157.9-157.9, agg 315.9
+[19:42:22]   ttft 5.75s prefill 5020.5 dec 157.9 tok/s (200 tok / 1.26s)
+[19:42:22]   ttft 12.64s prefill 2283.9 dec 157.9 tok/s (200 tok / 1.26s)
+[19:42:30] 启动 iq3_xxs ...
+[19:42:55] 就绪 (25s), max_context=262144
+[19:42:58] iq3_xxs short x1: wall 2.43s, dec_tps 102.6-102.6, agg 102.6
+[19:42:58]   ttft 0.49s prefill 118.4 dec 102.6 tok/s (200 tok / 1.94s)
+[19:43:01] iq3_xxs short x2: wall 3.39s, dec_tps 145.3-163.1, agg 290.5
+[19:43:01]   ttft 2.17s prefill 26.7 dec 163.1 tok/s (200 tok / 1.22s)
+[19:43:01]   ttft 0.41s prefill 141.5 dec 145.3 tok/s (200 tok / 1.37s)
+[19:43:12] iq3_xxs long28k x1: wall 10.91s, dec_tps 146.3-146.3, agg 146.3
+[19:43:12]   ttft 9.55s prefill 3022.8 dec 146.3 tok/s (200 tok / 1.36s)
+[19:43:26] iq3_xxs long28k x2: wall 13.93s, dec_tps 151.9-151.9, agg 303.8
+[19:43:26]   ttft 5.72s prefill 5046.9 dec 151.9 tok/s (200 tok / 1.31s)
+[19:43:26]   ttft 12.61s prefill 2289.3 dec 151.9 tok/s (200 tok / 1.31s)
+[19:43:30] 已写入 /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/bench/concurrency_results.csv
+[19:43:30] 已追加 /home/kevin/projects/nv-p2p/sm86/qwen3.8-flash-next/bench/BENCHMARK.md
